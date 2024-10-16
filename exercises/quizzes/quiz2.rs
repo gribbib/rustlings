@@ -33,26 +33,10 @@ mod my_module {
             match tuple.1 {
                 Command::Uppercase => return_vector.push(tuple.0.to_uppercase()),
                 Command::Trim => return_vector.push(tuple.0.trim().to_string()),
-                Command::Append(n) => return_vector.push(append(tuple.0, n))
+                Command::Append(n) => return_vector.push(tuple.0 + &"bar".repeat(n))
             }
         }
         return return_vector;
-     }
-
-     fn append(input: String, count: usize) -> String {
-        if count == 1 {
-            input + "bar"
-        } else if count > 1 {
-            let input = input + "bar";
-            append(input, count-1)
-        }else{
-            input
-        }
-        // let return_string: String = String::new;
-        // for i in 1..count {
-        //     return_string = return_string + "bar"
-        // }
-        // return_string
      }
 }
 
